@@ -1,0 +1,34 @@
+@startuml : Preccedent diagramm
+left to right direction
+skinparam ActorFontStyle awesome
+:Пользователь: --> (Use)
+"Включение приложения" as (Use)
+:Пользователь: --> (cam)
+"Наведение камеры на граффити" as (cam)
+
+skinparam ActorFontStyle awesome
+:Приложение: -down-> (Graph)
+"Определение граффити" as (Graph)
+:Приложение: --> (Traectory)
+"Отрисовка траектории движения от робота до граффити" as (Traectory)
+:Приложение: --> (message)
+"Отправка координат траектории движения от робота до граффити роботу" as (message)
+
+skinparam ActorFontStyle awesome
+:Робот: --> (command)
+(command) 0-- (commandMove)
+"Начать/закончить движение" as (commandMove)
+(command) 0-- (commandGraffity)
+"Закрасить граффити" as (commandGraffity)
+(command) 0-- (commandGetPossition)
+"Вернутся в начальное положение" as (commandGetPossition)
+"Получение комманды" as (command)
+:Робот: --> (go)
+"Движение по трактории" as (go)
+:Робот: --> (pullever)
+"Включение пулевизатора" as (pullever)
+:Робот: --> (clean)
+"Закраска граффити" as (clean)
+:Робот: --> (unpullever)
+"Выключение пулевизатора" as (unpullever)
+@enduml

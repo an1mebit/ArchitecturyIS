@@ -1,0 +1,7 @@
+@startuml : Camera preccedent
+hide footbox
+participant Camera
+participant GraffityIdentificator
+Camera -> GraffityIdentificator : Identity request
+GraffityIdentificator --> Camera : Identity response
+@enduml

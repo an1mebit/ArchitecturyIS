@@ -1,0 +1,17 @@
+@startuml : Robot preccedent
+hide footbox
+participant Robot
+participant Camera
+participant ControlSystem
+participant Pulivizer
+Robot -> Camera : Get trajectory
+Camera --> Robot : Send trajectory
+Robot -> ControlSystem : Move
+ControlSystem --> Robot : End move
+Robot -> ControlSystem : Use pulivizer
+Robot -> Pulivizer : Start painting
+Pulivizer --> Robot : End painting
+ControlSystem --> Robot : Stop using pulivizer
+Robot -> ControlSystem : Return to the starting position
+ControlSystem --> Robot : Returned
+@enduml
