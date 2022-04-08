@@ -1,0 +1,12 @@
+@startuml : Conceptual model
+class Camera {}
+class ControlSystem {}
+class Robot {}
+class GraffitiDeterminant {}
+class Pulivizer {}
+
+Robot - ControlSystem : controled >
+Robot -- Camera : uses >
+Camera - GraffitiDeterminant : uses >
+Robot -up- Pulivizer : have >
+@enduml
