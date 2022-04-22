@@ -88,7 +88,6 @@ def EventTerminal():
 
 def EventNet():
     pass
-#добавить диаграмму классов, шаблон стратегия на код+мэйн
 
 def main():
     print('[SYS] Choose:/')
@@ -110,4 +109,5 @@ def main():
             print('[SYS] Please, enter correct command')
     
 
-main()
+if __name__ == '__main__':
+    main()
