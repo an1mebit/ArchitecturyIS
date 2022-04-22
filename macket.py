@@ -1,13 +1,3 @@
-class Robot:
-    def __init__(self, state = False):
-        pass
-    def have(self):
-        self.puliviz = Pulivizer()
-    def controlled(self):
-        self.control = ControllSystem()
-    def uses(self):
-        self.cam = Camera()
-
 class Pulivizer:
     def __init__(self):
         pass
@@ -24,19 +14,19 @@ class Camera:
         pass
     def uses(self):
         self.determenant = GraffityDetermenant()
-    def getCoordinate():
-        return
+    def getCoordinate(self):
+        pass
 
 class ControllSystem:
     def __init__(self):
         pass
     def onAndOfRobot(self, state):
-        self.robot = Robot(state)
+        pass
     def commandReciver(self, string):
         self.string = string
     def go(self, angle, speed):
         cam = Camera()
-        coordinate = Camera.getCoordinate()
+        coordinate = Camera.getCoordinate(self)
         self.angle = angle
         self.speed = speed
     def stop(self, angle):
@@ -46,31 +36,78 @@ class GraffityDetermenant:
     def __init__(self):
         pass
 
+
 def checkStatus(status):
     robot = Robot()
-    if(status == 1):
+    if(status == '1'):
         print('[INFO] I get motivation')
         robot.control.onAndOfRobot(True)
-    elif(status == 2):
+    elif(status == '2'):
         print('[INFO] Determination of graffity')
-        robot.cam.determenant()
+        robot.cam.uses()
         print('[INFO] Getting coordinate of destination')
         robot.cam.getCoordinate()
-    elif(status == 3):
+    elif(status == '3'):
         print('[INFO] Go to destination')
-        robot.control.go()
-    elif(status == 4):
+        robot.control.go(90, 100)
+    elif(status == '4'):
         print('[INFO] Stop')
-        robot.control.stop()
-    elif(status == 5):
+        robot.control.stop(0)
+    elif(status == '5'):
         print('[INFO] Start shading')
         robot.puliviz.onAndOffPulivizer.on()
-    elif(status == 6):
+    elif(status == '6'):
         print('[INFO] Stop shading')
         robot.puliviz.onAndOffPulivizer.off()
-    elif(status == 7):
+    elif(status == '7'):
         print('[INFO] Change the world, my finall message, goodbye')
         robot.control.onAndOfRobot(False)
+    elif(status == 'exit'):
+        exit('[SYS] Success')
     else:
         print('[ERR] Something goes wrong')
-        exit(-1)
+
+class Robot:
+    def __init__(state=False):
+        pass
+    puliviz = Pulivizer()
+    control = ControllSystem()
+    cam = Camera()
+    
+    class EventHandler:
+        def __init__(self, func=None):
+            if func:
+                self.Event = func
+        def Event(self):
+            pass
+
+def EventTerminal():
+    while(True):
+        status = input()
+        checkStatus(status)
+
+def EventNet():
+    pass
+#добавить диаграмму классов, шаблон стратегия на код+мэйн
+
+def main():
+    print('[SYS] Choose:/')
+    while True:
+        rob = Robot()
+        command = input()
+        if command == 'term':
+            print('[SYS] Enter the command: ')
+            event = rob.EventHandler(EventTerminal)
+            event.Event()
+        elif command == 'net':
+            print('[SYS] Net starting... ')
+            event = rob.EventHandler(EventNet)
+            event.Event()
+            print('[SYS] Net end')
+        elif command == 'exit':
+            exit('[SYS] Success')
+        else:
+            print('[SYS] Please, enter correct command')
+    
+
+main()
