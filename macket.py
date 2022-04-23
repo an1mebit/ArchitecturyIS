@@ -1,3 +1,7 @@
+from udpServer import server
+from udpClient import client
+import threading
+
 class Pulivizer:
     def __init__(self):
         pass
@@ -82,12 +86,14 @@ class Robot:
             pass
 
 def EventTerminal():
-    while(True):
+    while True:
         status = input()
         checkStatus(status)
 
 def EventNet():
-    pass
+    while True:
+        msg = input()
+        client(msg)
 
 def main():
     print('[SYS] Choose:/')
@@ -101,7 +107,10 @@ def main():
         elif command == 'net':
             print('[SYS] Net starting... ')
             event = rob.EventHandler(EventNet)
+            thread = threading.Thread(target=server)
+            thread.start()
             event.Event()
+            thread.join()
             print('[SYS] Net end')
         elif command == 'exit':
             exit('[SYS] Success')
