@@ -1,0 +1,39 @@
+@startuml : Class diagram 
+class Pulivizeer {
+    class onAndOffPulivizer
+}
+class onAndOffPulivizer{
+    +on()
+    +off()
+}
+class Camera{
+    +uses()
+    +getCoordinate()
+}
+class ControlSystem{
+    +onAndOffRobot(state)
+    +commandReciver(string)
+    +go(angle, speed)
+    +stop(angle)
+}
+class GraffityDetermenant{}
+class Robot{
+    +Pulivizeer
+    +control
+    +Camera
+    class EventHandler
+}
+class EventHandler{
+    +Event()
+}
+class EventOne{}
+class EventTwo{}
+
+EventHandler<|---(EventOne, EventTwo)
+Robot *-- EventHandler
+Pulivizeer *-- onAndOffPulivizer
+Camera *-- GraffityDetermenant
+ControlSystem o-- Robot
+ControlSystem o-- Camera
+ControlSystem o-- Pulivizeer
+@enduml

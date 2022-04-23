@@ -1,4 +1,4 @@
-@startuml : diagramm
+@startuml : state diagram
 left to right direction
 (0)-->(включить)
 (включить)-->(выключить) : выключение робота

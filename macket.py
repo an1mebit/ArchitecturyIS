@@ -17,7 +17,7 @@ class Camera:
     def getCoordinate(self):
         pass
 
-class ControllSystem:
+class ControlSystem:
     def __init__(self):
         pass
     def onAndOfRobot(self, state):
@@ -71,7 +71,7 @@ class Robot:
     def __init__(state=False):
         pass
     puliviz = Pulivizer()
-    control = ControllSystem()
+    control = ControlSystem()
     cam = Camera()
     
     class EventHandler:
