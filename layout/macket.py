@@ -1,5 +1,5 @@
-from udpServer import server
-from udpClient import client
+from layout.udpServer import server
+from layout.udpClient import client
 import threading
 
 class Pulivizer:
