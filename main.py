@@ -28,14 +28,11 @@ def show():
         
         
         for contour in captch_ex(frame):
-            # get rectangle bounding contour
             [x, y, w, h] = cv2.boundingRect(contour)
 
-            # Don't plot small false positives that aren't text
             if w < 35 and h < 35:
                 continue
 
-            # draw rectangle around contour on original image
             cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 255), 2)
         
         k = cv2.waitKey(1)
