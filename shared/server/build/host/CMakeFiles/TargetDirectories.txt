@@ -1,0 +1,2 @@
+/home/ilya/IS-techn/for_KasOS/for_pushing/server_on_KasOS/build/host/CMakeFiles/rebuild_cache.dir
+/home/ilya/IS-techn/for_KasOS/for_pushing/server_on_KasOS/build/host/CMakeFiles/edit_cache.dir

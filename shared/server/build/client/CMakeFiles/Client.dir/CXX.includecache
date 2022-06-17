@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ilya/IS-techn/for_KasOS/for_pushing/server_on_KasOS/client/src/client.cpp
+iostream
+-
+sstream
+-
+string
+-
+netinet/in.h
+-
+unistd.h
+-
+stdio.h
+-
+sys/socket.h
+-
+sys/types.h
+-
+sys/mount.h
+-
+sys/stat.h
+-
+platform/platform.h
+-
+kos_net.h
+-
+netdb.h
+-
+stdlib.h
+-
+string.h
+-
+sys/select.h
+-
+

@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ilya/IS-techn/for_KasOS/for_pushing/server_on_KasOS/env/src/env.c
+env/env.h
+-
+stdlib.h
+-
+

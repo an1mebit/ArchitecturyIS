@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ilya/IS-techn/for_KasOS/for_pushing/server_on_KasOS/build/einit/EinitQemu-kss/EinitQemu.c
+stdlib.h
+-
+stdio.h
+-
+rtl/retcode.h
+-
+coresrv/entity/entity_api.h
+-
+services/handle/if_connection.h
+-
+env/env.h
+-
+
